@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoresQ - Delivery Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial; background: #f0f2f5; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .delivery-header { background: linear-gradient(135deg, #ff9800, #f57c00); color: white; padding: 20px 25px; }
+        .delivery-header h1 { margin-bottom: 5px; }
+        .stats { display: flex; gap: 15px; margin: 20px 25px; }
+        .stat-card { background: #f8f9fa; padding: 15px; border-radius: 12px; flex: 1; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .stat-number { font-size: 32px; font-weight: bold; color: #ff9800; }
+        .live-location { background: #e3f2fd; padding: 12px 20px; margin: 0 25px 20px 25px; border-radius: 10px; font-size: 14px; color: #1565c0; }
+        .status-text { background: #e8f5e9; padding: 12px 20px; margin: 0 25px 20px 25px; border-radius: 10px; text-align: center; font-weight: bold; color: #2e7d32; }
+        .map-container { height: 400px; margin: 0 25px 20px 25px; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        .section-title { font-size: 20px; margin: 0 25px 15px 25px; color: #333; }
+        .request-card { background: #fff; border-radius: 12px; padding: 18px; margin: 0 25px 15px 25px; border-left: 5px solid #ff9800; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s; }
+        .request-card:hover { transform: translateX(5px); }
+        .request-card.accepted { border-left-color: #ff9800; }
+        .request-card.picked { border-left-color: #28a745; background: #f0fff4; }
+        .request-card h4 { margin-bottom: 10px; color: #333; }
+        .request-card p { margin: 8px 0; color: #666; font-size: 14px; }
+        button { background: #ff9800; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; margin-right: 10px; margin-top: 10px; font-weight: bold; transition: all 0.2s; }
+        button:hover { transform: translateY(-2px); box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+        button.deliver { background: #28a745; }
+        button.route { background: #2196f3; }
+        .error { color: #d32f2f; background: #ffebee; padding: 10px; border-radius: 8px; margin: 10px 25px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="delivery-header">
+            <h1>🛵 DELIVERY DASHBOARD</h1>
+            <p>Delivery Partner ID: <strong id="deliveryName">D1</strong></p>
+        </div>
+
+        <div class="live-location" id="liveLocation">
+            📡 Getting your live location...
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="pendingCount">0</div>
+                <div>Pending Pickups</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="activeCount">0</div>
+                <div>Active Deliveries</div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <div id="map" style="height: 100%; width: 100%;"></div>
+        </div>
+
+        <div class="status-text" id="statusText">
+            ✅ Ready to accept deliveries
+        </div>
+
+        <h3 class="section-title">📋 Assigned Requests</h3>
+        <div id="requestsList"></div>
+    </div>
+
+    <script src="delivery.js"></script>
+</body>
+</html>

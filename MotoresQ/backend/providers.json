@@ -1,0 +1,74 @@
+[
+    {
+        "id": "F1",
+        "name": "Indian Oil Petrol Pump",
+        "type": "fuel",
+        "lat": 30.3165,
+        "lng": 78.0322,
+        "phone": "0135-2654321",
+        "address": "Rajpur Road, Dehradun, Uttarakhand",
+        "rating": 4.5,
+        "open24x7": true,
+        "services": ["Petrol", "Diesel", "CNG", "Car Wash"]
+    },
+    {
+        "id": "F2",
+        "name": "HP Petrol Pump",
+        "type": "fuel",
+        "lat": 30.3256,
+        "lng": 78.0438,
+        "phone": "0135-2712345",
+        "address": "Clock Tower, Dehradun, Uttarakhand",
+        "rating": 4.3,
+        "open24x7": true,
+        "services": ["Petrol", "Diesel"]
+    },
+    {
+        "id": "F3",
+        "name": "Bharat Petroleum",
+        "type": "fuel",
+        "lat": 30.3371,
+        "lng": 78.0215,
+        "phone": "0135-2623456",
+        "address": "Saharanpur Road, Dehradun, Uttarakhand",
+        "rating": 4.6,
+        "open24x7": true,
+        "services": ["Petrol", "Diesel", "Air Fill"]
+    },
+    {
+        "id": "M1",
+        "name": "Maruti Suzuki Authorized Service",
+        "type": "mechanic",
+        "lat": 30.3201,
+        "lng": 78.0412,
+        "phone": "0135-2656789",
+        "address": "Rajpur Road, Dehradun, Uttarakhand",
+        "rating": 4.7,
+        "open24x7": false,
+        "services": ["Engine Repair", "Oil Change", "Brake Service", "Battery"]
+    },
+    {
+        "id": "M2",
+        "name": "Honda Car Care Center",
+        "type": "mechanic",
+        "lat": 30.3345,
+        "lng": 78.0298,
+        "phone": "0135-2734567",
+        "address": "Saharanpur Road, Dehradun, Uttarakhand",
+        "rating": 4.6,
+        "open24x7": false,
+        "services": ["General Repair", "AC Service", "Tire Change"]
+    },
+    {
+        "id": "M3",
+        "name": "24x7 Roadside Assistance",
+        "type": "mechanic",
+        "lat": 30.3255,
+        "lng": 78.0523,
+        "phone": "0135-2890123",
+        "address": "Clock Tower, Dehradun, Uttarakhand",
+        "rating": 4.3,
+        "open24x7": true,
+        "services": ["Towing", "Battery Jump", "Fuel Delivery", "Flat Tire"]
+    }
+]

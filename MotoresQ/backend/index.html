@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoresQ - Emergency Roadside Assistance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Google Maps API with YOUR key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByoGSgPVnmpuCSXnKd3YbNeVhuKQlPmq4&libraries=places"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 M O T O R E S Q</h1>
+            <p class="tagline">Emergency Fuel & Mechanic Finder</p>
+        </header>
+
+        <div class="location-status" id="locationStatus">
+            <div class="status-indicator"></div>
+            <span>Getting your location...</span>
+        </div>
+
+        <div class="buttons-container">
+            <button id="fuelBtn" class="emergency-btn fuel-btn">
+                <span class="btn-icon">⛽</span>
+                <span class="btn-text">EMERGENCY FUEL</span>
+                <span class="btn-desc">Find nearest gas station</span>
+            </button>
+            
+            <button id="mechanicBtn" class="emergency-btn mechanic-btn">
+                <span class="btn-icon">🔧</span>
+                <span class="btn-text">EMERGENCY MECHANIC</span>
+                <span class="btn-desc">Find nearest mechanic</span>
+            </button>
+        </div>
+
+        <div id="mapContainer" class="map-container" style="display: none;">
+            <div id="map"></div>
+            <button id="closeMapBtn" class="close-map-btn">×</button>
+        </div>
+
+        <div id="results" class="results-container">
+            <h2>Nearest Providers</h2>
+            <div id="providersList" class="providers-list">
+                <div class="welcome-message">
+                    <h3>👋 Welcome to MotoresQ!</h3>
+                    <p>Click a button above to find nearest emergency services.</p>
+                    <p>We'll use your location to find:</p>
+                    <ul>
+                        <li>⛽ Nearest gas stations for emergency fuel</li>
+                        <li>🔧 Nearest mechanics for roadside assistance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
